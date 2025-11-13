@@ -26,7 +26,6 @@ landing_frame = None
 prev_ankle_y = None
 arm_speeds = []
 
-# --- Setup VideoWriter to save output ---
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 out = cv2.VideoWriter(r'output\output.mp4', fourcc, fps, (w, h))
 
@@ -103,7 +102,7 @@ while True:
         draw_info_box(frame, "Peak Arm Speed", display_arm_speed * 3.6, "km/h", (30, 180), (0, 255, 0))
     frame = draw_border(frame)
 
-    # --- Save processed frame ---
+    # Saving the processed frames
     out.write(frame)
 
     cv2.imshow("Bowler Analysis (Sports Broadcast)", frame)
