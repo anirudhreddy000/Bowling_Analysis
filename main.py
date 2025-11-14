@@ -11,7 +11,7 @@ from modules.effects import apply_vignette
 mp_pose = mp.solutions.pose
 
 # --- Setup ---
-cap, fps, w, h = load_video("videos/archer .mp4")
+cap, fps, w, h = load_video("videos/bret_fin.mp4")
 pose_model = init_pose()
 baseline_hip_y = None
 max_elevation_px = 0
@@ -27,7 +27,7 @@ prev_ankle_y = None
 arm_speeds = []
 
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out = cv2.VideoWriter(r'output\output.mp4', fourcc, fps, (w, h))
+out = cv2.VideoWriter(r'output\brett_lee.mp4', fourcc, fps, (w, h))
 
 # --- Main Loop ---
 frame_count = 0
@@ -110,5 +110,5 @@ while True:
         break
 
 cap.release()
-out.release()  # release the video writer
+out.release()  
 cv2.destroyAllWindows()
